@@ -38,7 +38,7 @@ for (const song of songs) {
     
     `
               <li>
-            <img class="invert" src="/img/music.svg" alt="">
+            <img class="invert" src="/Music-Player/img/music.svg" alt="">
             <div class="info">
  <div class="songname">${decodeURIComponent(song)}</div>
           <div class="songartist">xyz</div>
@@ -46,7 +46,7 @@ for (const song of songs) {
             </div>
              <div class="playNow">
                 <span>Play Now</span>
-               <img class="invert" src="/img/play.svg" alt="no-img">
+               <img class="invert" src="/Music-Player/img/play.svg" alt="no-img">
 
              </div></li> `
     
@@ -89,7 +89,7 @@ const playMusic = (track,pause = false)=>{
   currentSong.src = `/${currFolder}/`+track.trim()
   if(!pause){ // play == false
 currentSong.play()
- play.src = '/img/pause.svg'
+ play.src = '/Music-Player/img/pause.svg'
  }
     const songname = document.querySelector('.songinfo .songname')
   songname.innerHTML = decodeURIComponent(track)
@@ -190,7 +190,7 @@ play.addEventListener('click',()=>{
   if(currentSong.paused){
     currentSong.play()
 
-    play.src = '/img/pause.svg'
+    play.src = '/Music-Player/img/pause.svg'
     
   
    
@@ -200,7 +200,7 @@ play.addEventListener('click',()=>{
   }
   else{
     currentSong.pause()
-    play.src = '/img/play.svg'
+    play.src = '/Music-Player/img/play.svg'
 
   }
 })
@@ -211,7 +211,7 @@ currentSong.addEventListener('timeupdate',()=>{
   const currentTime = secondToMinutesSecond(currentSong.currentTime)
   const duration = secondToMinutesSecond(currentSong.duration)
   if(currentSong.currentTime == currentSong.duration){
-    play.src = '/img/play.svg'
+    play.src = '/Music-Player/img/play.svg'
   }
   document.querySelector('.songtime').innerHTML = `${currentTime} / ${duration}`
 let circle = document.querySelector('.circle')
@@ -289,10 +289,10 @@ let seek = (currentSong.currentTime / currentSong.duration)*100
         
         currentSong.volume =parseInt(e.target.value)/100
         if(currentSong.volume>0){
- document.querySelector('.volume > img').src = '/img/volume.svg'
+ document.querySelector('.volume > img').src = '/Music-Player/img/volume.svg'
         }
         else {
- document.querySelector('.volume > img').src = '/img/mute.svg'
+ document.querySelector('.volume > img').src = '/Music-Player/img/mute.svg'
         }
        
         
@@ -330,14 +330,14 @@ let seek = (currentSong.currentTime / currentSong.duration)*100
       if(currentSong.muted){
          currentSong.muted = false;
         
-         e.target.src = "/img/volume.svg";
+         e.target.src = "/Music-Player/img/volume.svg";
      document.querySelector('.range').getElementsByTagName('input')[0].value =  currentSong.volume*100;
      
 
       }
       else{
           
-  e.target.src = "/img/mute.svg";
+  e.target.src = "/Music-Player/img/mute.svg";
         
         currentSong.muted = true;
      document.querySelector('.range').getElementsByTagName('input')[0].value = 0
