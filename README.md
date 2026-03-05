@@ -1,7 +1,7 @@
 
 🎵 Web Music Player (Spotify Clone)
 A fully functional, responsive web-based music player built with JavaScript, HTML, and CSS. This project dynamically fetches audio files and album metadata from the server, mimicking the core functionality of popular music streaming apps.
-
+👉 Live demo: https://music-player.infinityfree.me/
 ✨ Features
 Dynamic Album Fetching: Automatically reads folders on the server to generate clickable album cards using album-specific info.json and cover images.
 
@@ -26,3 +26,4 @@ Backend/Server: Apache Server (Relies on Apache directory listing to parse folde
 
 ## UI
 <img width="1147" height="685" alt="image" src="https://github.com/user-attachments/assets/0ce0fca9-34f9-4e52-ae33-6ed712000444" />
+
