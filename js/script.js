@@ -5,7 +5,7 @@
 isdraggable = false;
 async function getSongs(folder) {
 currFolder = folder
-let a = await fetch(`/${folder}`)
+let a = await fetch(`${folder}`)
 let response =  await a.text();
 
 let div = document.createElement('div')
@@ -90,7 +90,7 @@ playMusic(element.currentTarget.querySelector(".info").firstElementChild.innerTe
 
 const playMusic = (track,pause = false)=>{
 
-  currentSong.src = `/${currFolder}/`+track.trim()
+  currentSong.src = `${currFolder}/`+track.trim()
   if(!pause){ // play == false
 currentSong.play()
  play.src = '/img/pause.svg'
