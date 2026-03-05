@@ -66,8 +66,29 @@ e.addEventListener('click',(element)=>{
   
   
 
+  document.querySelectorAll('.playNow > img').forEach(e=>{
+    e.src = '/img/play.svg'
+  })
+
+if(currentSong.paused){
+ playMusic(element.currentTarget.querySelector(".info").firstElementChild.innerText);
+    currentSong.play();
+    play.src = '/img/pause.svg'
+
+    
+    
+   e.querySelector('.playNow > img').src = '/img/pause.svg'
   
-playMusic(element.currentTarget.querySelector(".info").firstElementChild.innerText);
+}
+else{
+playMusic(element.currentTarget.querySelector(".info").firstElementChild.innerText,true);
+ currentSong.pause();
+  play.src = '/img/play.svg'
+  
+    
+    e.querySelector('.playNow > img').src = '/img/play.svg'
+ 
+}
   
  
   
@@ -170,6 +191,34 @@ Array.from(document.getElementsByClassName('card')).forEach(function(e){
     
   await getSongs(`${item.currentTarget.dataset.folder}`);
    playMusic(songs[0])
+   
+
+     let allIcons = document.querySelectorAll('.songList .playNow > img');
+  allIcons.forEach(icon => {
+    icon.src = '/img/play.svg';
+  });
+  if(currentSong.paused){
+  let playingSongName = document.querySelector('.songinfo .songname').innerText.trim();
+  let listItems = document.querySelectorAll('.songList li')
+  listItems.forEach(e=>{
+    let listsong  = e.querySelector('.songname').innerText.trim();
+      if (listsong=== playingSongName) {
+        e.querySelector('.playNow > img').src = '/img/play.svg';
+      }
+  })
+
+  }
+ else{
+  let playingSongName = document.querySelector('.songinfo .songname').innerText.trim();
+  let listItems = document.querySelectorAll('.songList li')
+  listItems.forEach(e=>{
+    let listsong  = e.querySelector('.songname').innerText.trim();
+      if (listsong === playingSongName) {
+        e.querySelector('.playNow > img').src = '/img/pause.svg';
+      }
+  })
+
+ }
 
   })
 
@@ -199,6 +248,7 @@ play.addEventListener('click',()=>{
     currentSong.play()
 
     play.src = '/img/pause.svg'
+
     
   
    
@@ -209,8 +259,35 @@ play.addEventListener('click',()=>{
   else{
     currentSong.pause()
     play.src = '/img/play.svg'
+  
+  }
+
+  let allIcons = document.querySelectorAll('.songList .playNow > img');
+  allIcons.forEach(icon => {
+    icon.src = '/img/play.svg';
+  });
+  if(currentSong.paused){
+  let playingSongName = document.querySelector('.songinfo .songname').innerText.trim();
+  let listItems = document.querySelectorAll('.songList li')
+  listItems.forEach(e=>{
+    let listsong  = e.querySelector('.songname').innerText.trim();
+      if (listsong=== playingSongName) {
+        e.querySelector('.playNow > img').src = '/img/play.svg';
+      }
+  })
 
   }
+ else{
+  let playingSongName = document.querySelector('.songinfo .songname').innerText.trim();
+  let listItems = document.querySelectorAll('.songList li')
+  listItems.forEach(e=>{
+    let listsong  = e.querySelector('.songname').innerText.trim();
+      if (listsong === playingSongName) {
+        e.querySelector('.playNow > img').src = '/img/pause.svg';
+      }
+  })
+
+ }
 })
 
 // Listen for time update event
@@ -267,6 +344,33 @@ let seek = (currentSong.currentTime / currentSong.duration)*100
       playMusic(songs[curr_idx-1]);
 
     }
+
+      let allIcons = document.querySelectorAll('.songList .playNow > img');
+  allIcons.forEach(icon => {
+    icon.src = '/img/play.svg';
+  });
+  if(currentSong.paused){
+  let playingSongName = document.querySelector('.songinfo .songname').innerText.trim();
+  let listItems = document.querySelectorAll('.songList li')
+  listItems.forEach(e=>{
+    let listsong  = e.querySelector('.songname').innerText.trim();
+      if (listsong=== playingSongName) {
+        e.querySelector('.playNow > img').src = '/img/play.svg';
+      }
+  })
+
+  }
+ else{
+  let playingSongName = document.querySelector('.songinfo .songname').innerText.trim();
+  let listItems = document.querySelectorAll('.songList li')
+  listItems.forEach(e=>{
+    let listsong  = e.querySelector('.songname').innerText.trim();
+      if (listsong === playingSongName) {
+        e.querySelector('.playNow > img').src = '/img/pause.svg';
+      }
+  })
+
+ }
      
   })
   // Add event listner to next
@@ -287,7 +391,32 @@ let seek = (currentSong.currentTime / currentSong.duration)*100
 
     }
 
-     
+       let allIcons = document.querySelectorAll('.songList .playNow > img');
+  allIcons.forEach(icon => {
+    icon.src = '/img/play.svg';
+  });
+  if(currentSong.paused){
+  let playingSongName = document.querySelector('.songinfo .songname').innerText.trim();
+  let listItems = document.querySelectorAll('.songList li')
+  listItems.forEach(e=>{
+    let listsong  = e.querySelector('.songname').innerText.trim();
+      if (listsong=== playingSongName) {
+        e.querySelector('.playNow > img').src = '/img/play.svg';
+      }
+  })
+
+  }
+ else{
+  let playingSongName = document.querySelector('.songinfo .songname').innerText.trim();
+  let listItems = document.querySelectorAll('.songList li')
+  listItems.forEach(e=>{
+    let listsong  = e.querySelector('.songname').innerText.trim();
+      if (listsong === playingSongName) {
+        e.querySelector('.playNow > img').src = '/img/pause.svg';
+      }
+  })
+
+ }
   })
 
   // add event listner to volume
