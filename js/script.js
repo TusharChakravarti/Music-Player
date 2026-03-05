@@ -130,7 +130,7 @@ for (let index = 0; index < array.length; index++) {
   
 let href = e.getAttribute('href')
    console.log( e.getAttribute('href'));
-  if(href && href!=='/' && href!=='/songs'&& !href.startsWith('?')){
+  if(href  && href!=='/' && href!=='/songs'&& !href.startsWith('?')){
     console.log(e.href);
     
     let folder = href
